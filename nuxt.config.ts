@@ -9,4 +9,7 @@ export default defineNuxtConfig({
   css: ["~/assets/css/main.css"],
 
   modules: ["@nuxt/ui", "@nuxt/eslint"],
+  // imports: {
+  //   scan: false, // disable auto import utils & composable
+  // },
 });

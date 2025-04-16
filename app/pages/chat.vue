@@ -10,7 +10,6 @@
 <!-- Layout Setup per Page -->
 <script setup lang="ts">
 definePageMeta({
-  layout: "blue",
-  //   false -> not using layout
+  layout: false,
 });
 </script>
