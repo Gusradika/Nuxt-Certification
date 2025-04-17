@@ -56,3 +56,7 @@
 1. No round trips
 2. bundle
 3. Hydration process to add some content.
+
+# Nuxt Config vs app Config
+
+## App Config -> Update Reactively

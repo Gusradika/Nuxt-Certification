@@ -4,6 +4,8 @@ export default defineEventHandler(async (event) => {
   const id = messages.length.toString();
   const lastMessage = messages[messages.length - 1];
 
+  // console log to server
+  console.log(useRuntimeConfig());
   // returning object
   return {
     id,

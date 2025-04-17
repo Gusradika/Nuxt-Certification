@@ -12,4 +12,16 @@ export default defineNuxtConfig({
   // imports: {
   //   scan: false, // disable auto import utils & composable
   // },
+
+  runtimeConfig: {
+    // By default its private
+    // CAN BE OVERRIDEN BY .ENV NUXT_OPEN_AI_APIKEY
+    openaiApiKey: "",
+    // Public
+    // CAN BE OVERRIDEN BY .ENV
+    // CAN BE OVERRIDEN BY .ENV NUXT_PUBLIC_SOME_VALUE
+    public: {
+      someValue: "on the frontend",
+    },
+  },
 });

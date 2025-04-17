@@ -15,8 +15,15 @@ definePageMeta({
   layout: false,
 });
 
-useHeadSafe({
-  title: chat.value.title, // added to <html tag>
+const appConfig = useAppConfig();
+const title = computed(() =>
+  chat.value?.title
+    ? `${chat.value.title} - ${appConfig.title}`
+    : appConfig.title
+);
+
+useHead({
+  title, // added to <html tag>
   htmlAttrs: {
     class: "my-really-cool-class", // added to <html tag>
   },
