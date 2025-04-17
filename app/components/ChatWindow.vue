@@ -1,16 +1,25 @@
 <script setup lang="ts">
-const { chat, messages, sendMessage } = useChat();
+import type { ChatMessage, Chat } from "../types";
 
-// handle Event
+const props = defineProps<{
+  messages: ChatMessage[];
+  chat: Chat;
+}>();
+
+const emit = defineEmits(["send-message"]);
+
+const { showScrollButton, scrollToBottom, pinToBottom } = useChatScroll();
+
 function handleSendMessage(message: string) {
-  sendMessage(message);
+  emit("send-message", message);
 }
+
+watch(() => props.messages, pinToBottom, { deep: true });
 </script>
 
 <template>
   <div ref="scrollContainer" class="scroll-container">
     <UContainer class="chat-container">
-      <!-- ... -->
       <div v-if="!messages?.length" class="empty-state">
         <div class="empty-state-card">
           <h2 class="empty-state-title">Start your chat</h2>
@@ -41,12 +50,23 @@ function handleSendMessage(message: string) {
         </div>
 
         <div class="message-form-container">
+          <div class="scroll-to-bottom-button-container">
+            <UButton
+              v-if="showScrollButton"
+              color="neutral"
+              variant="outline"
+              icon="i-heroicons-arrow-down"
+              class="rounded-full shadow-sm"
+              @click="() => scrollToBottom()"
+            />
+          </div>
           <ChatInput @send-message="handleSendMessage" />
         </div>
       </template>
     </UContainer>
   </div>
 </template>
+
 <style scoped>
 /* ===== Layout & Container Styles ===== */
 .scroll-container {
@@ -175,11 +195,5 @@ function handleSendMessage(message: string) {
 
 .message-input::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera */
-}
-
-.typing-indicator {
-  display: inline-block;
-  animation: pulse 1s infinite;
-  margin-left: 0.25rem;
 }
 </style>
