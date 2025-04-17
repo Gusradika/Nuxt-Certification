@@ -83,3 +83,5 @@
 - Theme
 - Feature toggles
 - other app meta-data
+
+# Ollama vs OpenAI

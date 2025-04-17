@@ -15,8 +15,8 @@ export default defineEventHandler(async (event) => {
   const openaiModel = createOpenAIModel(openaiApiKey);
 
   const ollamaModel = createOllamaModel();
-  console.log(ollamaModel);
-  const response = await generateChatResponse(openaiModel, messages);
+  console.log(openaiModel);
+  const response = await generateChatResponse(ollamaModel, messages);
 
   // console log to server
   console.log(useRuntimeConfig());

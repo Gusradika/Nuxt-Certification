@@ -3,7 +3,7 @@
     <!-- Overriding. make sure definePageMeta 'layout' set to 'false' -->
     <!-- <NuxtLayout name="blue"> -->
     <h1>This is chat</h1>
-    <ChatWindow :chat :messages @send-message="sendMessage" />
+    <ChatWindow :typing :chat :messages @send-message="handleSendMessage" />
     <!-- </NuxtLayout> -->
   </div>
 </template>
@@ -14,6 +14,14 @@ const { chat, messages, sendMessage } = useChat();
 definePageMeta({
   layout: false,
 });
+
+const typing = ref(false);
+
+const handleSendMessage = async (message: string) => {
+  typing.value = true;
+  await sendMessage(message);
+  typing.value = false;
+};
 
 const appConfig = useAppConfig();
 const title = computed(() =>
