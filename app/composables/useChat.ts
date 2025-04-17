@@ -23,6 +23,7 @@ export default function useChat() {
   async function sendMessage(message: string) {
     messages.value.push(createMessage(message, "user"));
 
+    // with $fetch we dont need json parsing
     const data = await $fetch<ChatMessage>("/api/ai", {
       method: "POST",
       body: {
