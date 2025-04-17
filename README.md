@@ -57,6 +57,29 @@
 2. bundle
 3. Hydration process to add some content.
 
-# Nuxt Config vs app Config
+# (runtimeConfig) Nuxt Config vs app Config
+
+## runtimeConfig (NuxtConfig)
+
+- Set at runtime externally (.env file)
+- contain secrets and sensitive information
+- Only String
+
+### use case (Global)
+
+- URLs
+- DB connection
+- Auth Provider
+- API Secrets
 
 ## App Config -> Update Reactively
+
+- set at build time
+- dont put Sensitive Information!
+- any typescript you want
+
+### use case (Different user have different setting)
+
+- Theme
+- Feature toggles
+- other app meta-data
