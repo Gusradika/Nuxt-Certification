@@ -30,3 +30,5 @@
 ## Composables (Auto Import)
 
 1. Ussually start with use... ex: useChat, useSnackbar. Nested function.
+
+## with $fetch we dont need json parsing
