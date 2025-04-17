@@ -1,5 +1,6 @@
 <template>
   <div class="layout-container">
+    <AppHeader />
     <main class="main-content">
       <!-- Content will be Rendered in Slot -->
       <slot />

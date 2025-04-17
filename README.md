@@ -90,3 +90,7 @@
 - Open API is premium service
 
 # MDC is a module that can highlight code syntax
+
+# Dynamic Routing : meaning a route that handles GET request
+
+- by example (folder) chats/ (File)[id].vue

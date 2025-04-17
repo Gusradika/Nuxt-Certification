@@ -48,9 +48,9 @@ watch(() => props.messages, pinToBottom, { deep: true });
               <MarkdownRenderer :content="message.content" />
             </div>
           </div>
-        </div>
 
-        <span v-if="typing" class="typing-indicator"> &#9611; </span>
+          <span v-if="typing" class="typing-indicator"> &#9611; </span>
+        </div>
 
         <div class="message-form-container">
           <div class="scroll-to-bottom-button-container">
@@ -75,6 +75,7 @@ watch(() => props.messages, pinToBottom, { deep: true });
 .scroll-container {
   overflow-y: auto;
   height: 100%;
+  width: 100%;
   box-sizing: border-box;
 }
 
