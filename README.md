@@ -85,3 +85,8 @@
 - other app meta-data
 
 # Ollama vs OpenAI
+
+- ollama is Free but need configuration
+- Open API is premium service
+
+# MDC is a module that can highlight code syntax

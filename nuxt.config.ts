@@ -8,7 +8,7 @@ export default defineNuxtConfig({
 
   css: ["~/assets/css/main.css"],
 
-  modules: ["@nuxt/ui", "@nuxt/eslint"],
+  modules: ["@nuxt/ui", "@nuxt/eslint", "@nuxtjs/mdc"],
   // imports: {
   //   scan: false, // disable auto import utils & composable
   // },
@@ -22,6 +22,13 @@ export default defineNuxtConfig({
     // CAN BE OVERRIDEN BY .ENV NUXT_PUBLIC_SOME_VALUE
     public: {
       someValue: "on the frontend",
+    },
+  },
+
+  mdc: {
+    highlight: {
+      theme: "material-theme-palenight",
+      langs: ["html", "markdown", "vue", "typescript", "javascript"],
     },
   },
 });
